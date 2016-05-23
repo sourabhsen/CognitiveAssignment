@@ -1,0 +1,32 @@
+<!-- Graph-->
+
+<div class="container" ng-controller="graphController">
+    <h2 class="text-center">Graph Of String Text</h2>
+    <div class="form">
+        <div>
+           <label for="name">Name:</label>
+           <input type="text" id="name" maxlength="10"/>
+        </div>
+        <div>
+          <label for="string">String</label>
+          <input type="text" id="string" ng-model="typString" maxlength="15" ng-keyup="createGraph(typString)"/>
+        </div>
+        
+    </div>
+    
+      <div class="col-sm-12 f-n m-auto">
+            <div class="tree" ng-if="typString">
+            <ul>
+                <li>
+                    <a href="#">{{typString}}</a>
+                    <ul>
+                        <li  class="child-{{$index}}" ng-repeat="x in childNodes track by $index">
+                            <a href="#">{{x}}</a>
+                        </li>
+                    </ul>
+                </li>
+                </ul>
+        </div>
+      </div>
+      </div>
+			
